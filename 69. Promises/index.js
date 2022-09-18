@@ -3,7 +3,7 @@
 //              "I promise to return something in the future"
 
 // const promise = new Promise((resolve, reject) => {
-    
+
 //     let fileLoaded = false;
 
 //     if (fileLoaded) {
@@ -20,8 +20,9 @@
 //     console.log(value);
 // });
 
-const wait = time => new Promise(resolve => {
+const wait = (time) =>
+  new Promise((resolve) => {
     setTimeout(resolve, time);
-});
+  });
 
-wait(3000).then(()=>console.log(`thanks for waiting`));
+wait(3000).then(() => console.log(`thanks for waiting`));

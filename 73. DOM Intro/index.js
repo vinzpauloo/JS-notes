@@ -7,7 +7,8 @@ console.log(document.title);
 console.log(document.URL);
 
 //document.title = `Title goes here`;
-//document.location = `http://www.google.com`
+/* Changing the location of the page to google.com */
+document.location = `http://www.google.com`;
 
 document.body.style.backgroundColor = `skyblue`;
 

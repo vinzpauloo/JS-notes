@@ -1,9 +1,9 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-align: center;
-}
+} */
 
 /* label {
   font-size: 200px;
@@ -12,4 +12,15 @@
 label::after {
   content: "\a";
   white-space: pre;
+} */
+
+
+/* ::selection {
+  background: aqua;
+  color: goldenrod;
+}
+
+.test::selection{
+  background: deeppink;
+  color: white;
 } */

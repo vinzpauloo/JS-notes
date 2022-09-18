@@ -1,59 +1,48 @@
-// const myLabel = document.getElementById(`myLabel`);
-
-// update();
-// setInterval(update, 1000);
-
-// function update() {
-    
-//     let date = new Date();
-//     myLabel.innerHTML = formatTime(date);
-
-//     function formatTime(date) {
-//         let hours = date.getHours();
-//         let minutes = date.getMinutes();
-//         let seconds = date.getSeconds();
-//         let amOrPm = hours >= 12 ? `pm` : `am`;
-
-//         hours = (hours % 12) || 12;
-
-//         hours = formatZeroes(hours);
-//         minutes = formatZeroes(minutes);
-//         seconds = formatZeroes(seconds);
-
-//         return `${hours}:${minutes}:${seconds}`
-//     }
-//     function formatZeroes(time) {
-//         time = time.toString();
-//         return time.length < 2 ? `0` + time : time;
-//     }
-// }
-
-
-const myLabel = document.getElementById('myLabel');
-
-update();
+const Clock = document.getElementById(`myClock`);
 setInterval(update, 1000);
 
 function update() {
+  let date = new Date();
+  Clock.innerHTML = formatTime(date);
 
-    let date = new Date();
-    myLabel.innerHTML = formatTime(date);
+  function formatTime() {
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+    let day = date.getDate();
+    let year = date.getFullYear();
+    let amOrPm = hours >= 12 ? `PM` : `AM`;
 
-    function formatTime(date) {
-        let hours = date.getHours();
-        let minutes = date.getMinutes();
-        let seconds = date.getSeconds();
+    hours = hours % 12 || 12;
 
-        hours = (hours % 12) || 12;
+    hours = formatZeroes(hours);
+    minutes = formatZeroes(minutes);
+    seconds = formatZeroes(seconds);
 
-        hours = formatZeroes(hours);
-        minutes = formatZeroes(minutes);
-        seconds = formatZeroes(seconds);
+    return `${
+      monthNames[d.getMonth()]
+    } ${day}, ${year} at ${hours}:${minutes}:${seconds} ${amOrPm}`;
+  }
 
-        return `${hours}:${minutes}:${seconds}`
-    }
-    function formatZeroes(time) {
-        time = time.toString();
-        return time.length < 2 ? `0` + time : time;
-    }
+  function formatZeroes(time) {
+    time = time.toString();
+    return time.length < 2 ? `0` + time : time;
+  }
 }
+const d = new Date();
+const monthNames = [
+  `January`,
+  `February`,
+  `March`,
+  `April`,
+  `May`,
+  `June`,
+  `July`,
+  `August`,
+  `September`,
+  `October`,
+  `November`,
+  `December`,
+];
+
+console.log(d);
